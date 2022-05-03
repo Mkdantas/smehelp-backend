@@ -29,8 +29,6 @@ class CreateCaseService {
         io.emit("new_case", caseInfo)
 
         return createCase
-        
-        //scocket.io stuff here.
     }
 }
 

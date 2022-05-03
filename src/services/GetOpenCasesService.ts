@@ -1,13 +1,13 @@
 import prismaClient from "../prisma";
 
-class GetUnassignedCasesService {
+class GetOpenCasesService {
     async execute(){
         const cases = await prismaClient.case.findMany({
             orderBy:{
                 on_call: 'asc'
             }, 
             where: {
-                status: 'unassigned'
+                status: 'open'
             }
         })
 
@@ -15,4 +15,4 @@ class GetUnassignedCasesService {
     }
 }
 
-export { GetUnassignedCasesService }
+export { GetOpenCasesService }
