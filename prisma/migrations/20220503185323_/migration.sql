@@ -5,5 +5,7 @@ CREATE TABLE "cases" (
     "agent" TEXT NOT NULL,
     "problem_description" TEXT NOT NULL,
     "problem_solution" TEXT NOT NULL,
-    "status" TEXT NOT NULL
+    "status" TEXT NOT NULL,
+    "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "on_call" BOOLEAN NOT NULL DEFAULT false
 );

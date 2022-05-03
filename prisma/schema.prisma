@@ -17,6 +17,8 @@ model Case {
   problem_description String
   problem_solution    String
   status              String 
+  created_at          DateTime @default(now())
+  on_call             Boolean  @default(false)
 
 
   @@map("cases")
