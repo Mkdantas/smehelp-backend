@@ -1,4 +1,5 @@
 import prismaClient from '../prisma';
+import { io } from '../app';
 
 class UpdateCaseService {
     async execute(id: string, status: string, problem_description?: string, problem_solution?:string, on_call?: boolean){
@@ -12,6 +13,11 @@ class UpdateCaseService {
                 status,
                 on_call
             }
+        })
+
+        io.emit(`status-${status}`, {
+            id,
+            status
         })
 
         return updateCase
