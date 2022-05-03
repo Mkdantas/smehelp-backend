@@ -1,13 +1,13 @@
 import prismaClient from "../prisma";
 
-class GetPendingCasesService {
-    async execute(){
+class GetCasesByStatusService {
+    async execute(status: string, on_call?: string){
         const cases = await prismaClient.case.findMany({
             orderBy:{
                 on_call: 'asc'
             }, 
             where: {
-                status: 'pending'
+                status
             }
         })
 
@@ -15,4 +15,4 @@ class GetPendingCasesService {
     }
 }
 
-export { GetPendingCasesService }
+export { GetCasesByStatusService }

@@ -1,4 +1,3 @@
-import { create } from 'domain';
 import { io } from '../app';
 import prismaClient from '../prisma';
 
