@@ -15,7 +15,7 @@ class UpdateCaseService {
             }
         })
 
-        io.emit(`status-${status}`, {
+        io.emit("update", {
             id,
             status
         })
