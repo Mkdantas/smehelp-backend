@@ -8,6 +8,6 @@ CREATE TABLE "cases" (
     "status" TEXT NOT NULL,
     "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "on_call" BOOLEAN NOT NULL DEFAULT false,
-    "sme" TEXT NOT NULL,
-    "on_close_status" TEXT NOT NULL
+    "sme" TEXT NOT NULL DEFAULT '',
+    "on_close_status" TEXT NOT NULL DEFAULT ''
 );

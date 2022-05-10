@@ -19,8 +19,8 @@ model Case {
   status              String 
   created_at          DateTime @default(now())
   on_call             Boolean  @default(false)
-  sme                 String
-  on_close_status     String
+  sme                 String   @default("")
+  on_close_status     String   @default("")
 
 
   @@map("cases")
