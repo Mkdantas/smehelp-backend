@@ -2,7 +2,7 @@ import { io } from '../app';
 import prismaClient from '../prisma';
 
 class CreateCaseService {
-    async execute(case_number: string, agent: string, problem_description: string, problem_solution:string, status: string, on_call: boolean){
+    async execute(case_number: string, agent: string, problem_description: string, problem_solution:string, status: string, on_call: boolean, sme?: string, on_close_status?: string){
         const createCase = await prismaClient.case.create({
             data: {
                 case_number,
@@ -10,7 +10,9 @@ class CreateCaseService {
                 problem_description,
                 problem_solution,
                 status,
-                on_call
+                on_call,
+                sme,
+                on_close_status
             }
         })
 

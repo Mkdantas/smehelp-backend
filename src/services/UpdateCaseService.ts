@@ -13,7 +13,7 @@ class UpdateCaseService {
   ) {
     const updateCase = await prismaClient.case.update({
       where: {
-        id,
+        id
       },
       data: {
         problem_description,

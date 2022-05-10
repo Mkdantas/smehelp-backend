@@ -8,8 +8,8 @@ class UpdateCaseController {
     const { id } = req.params;
 
     const service = new UpdateCaseService();
-    let result;
-    result = await service.execute(
+
+    const result = await service.execute(
       id,
       status,
       problem_description,
