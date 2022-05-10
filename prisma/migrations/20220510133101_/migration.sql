@@ -7,5 +7,7 @@ CREATE TABLE "cases" (
     "problem_solution" TEXT NOT NULL,
     "status" TEXT NOT NULL,
     "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "on_call" BOOLEAN NOT NULL DEFAULT false
+    "on_call" BOOLEAN NOT NULL DEFAULT false,
+    "sme" TEXT NOT NULL,
+    "on_close_status" TEXT NOT NULL
 );
