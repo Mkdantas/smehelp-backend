@@ -15,12 +15,13 @@ model Case {
   case_number         String
   agent               String
   problem_description String
-  problem_solution    String
+  problem_solution    String   @default("")
   status              String 
   created_at          DateTime @default(now())
   on_call             Boolean  @default(false)
   sme                 String   @default("")
   on_close_status     String   @default("")
+  type                String   
 
 
   @@map("cases")

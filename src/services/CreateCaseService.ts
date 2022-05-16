@@ -2,17 +2,15 @@ import { io } from '../app';
 import prismaClient from '../prisma';
 
 class CreateCaseService {
-    async execute(case_number: string, agent: string, problem_description: string, problem_solution:string, status: string, on_call: boolean, sme?: string, on_close_status?: string){
+    async execute(case_number: string, agent: string, problem_description: string, status: string, on_call: boolean, type: string){
         const createCase = await prismaClient.case.create({
             data: {
                 case_number,
                 agent,
                 problem_description,
-                problem_solution,
                 status,
                 on_call,
-                sme,
-                on_close_status
+                type
             }
         })
 

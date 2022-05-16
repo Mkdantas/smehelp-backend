@@ -5,15 +5,11 @@ import { GetCasesByStatusService } from '../services/GetCasesByStatusService';
 class GetCasesByStatusController {
     async handle(req: Request, res: Response){
         const {status} = req.params;
-        const {on_call} = req.body
+        const {on_call, type} = req.body
         const service = new GetCasesByStatusService()
 
-        let result;
-        if(on_call){
-            result = await service.execute(status, on_call);
-        } else {
-            result = await service.execute(status)
-        }
+        const result = await service.execute(status, type, on_call);
+       
 
         return res.json(result)
     }

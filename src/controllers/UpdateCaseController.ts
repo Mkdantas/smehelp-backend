@@ -3,7 +3,7 @@ import { UpdateCaseService } from '../services/UpdateCaseService';
 
 class UpdateCaseController {
   async handle(req: Request, res: Response) {
-    const { problem_description, problem_solution, status, on_call, sme, on_close_status } =
+    const { problem_solution, status, sme, on_close_status } =
       req.body;
     const { id } = req.params;
 
@@ -12,9 +12,7 @@ class UpdateCaseController {
     const result = await service.execute(
       id,
       status,
-      problem_description,
       problem_solution,
-      on_call,
       sme,
       on_close_status
     );
